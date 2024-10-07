@@ -24,10 +24,39 @@ describe("Services - ScoreHeap", () => {
 
   it("should correctly insert items in the heap", () => {
     scoreHeap.insertScore({ name: "Test", points: 79 });
-    expect((scoreHeap as any).heap).toEqual([]);
+    expect((scoreHeap as any).heap).toEqual([
+      {
+        name: "Bob",
+        points: 92,
+      },
+      {
+        name: "Diana",
+        points: 90,
+      },
+      {
+        name: "Test",
+        points: 79,
+      },
+      {
+        name: "Alice",
+        points: 85,
+      },
+      {
+        name: "Eve",
+        points: 67,
+      },
+      {
+        name: "Charlie",
+        points: 78,
+      },
+    ]);
   });
 
   it("should correctly get the top n items from the heap", () => {
-    expect(scoreHeap.getTopScore(3)).toEqual([]);
+    expect(scoreHeap.getTopScore(3)).toEqual([
+      { name: "Bob", points: 92 },
+      { name: "Diana", points: 90 },
+      { name: "Charlie", points: 78 },
+    ]);
   });
 });
