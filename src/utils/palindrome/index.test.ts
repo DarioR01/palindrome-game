@@ -1,12 +1,12 @@
-import { isPalindrome, scorePalindrome } from ".";
+import { formatWord, isPalindrome, scorePalindrome } from ".";
 
 const PALINDROMES = [
   { word: "racecar", score: 7 },
   { word: "level", score: 5 },
   { word: "madam", score: 5 },
   { word: "A man a plan a canal Panama", score: 21 },
-  { word: "Was it a car or a cat I saw", score: 21 },
-  { word: "No lemon no melon", score: 15 },
+  { word: "Was it a car or a cat I saw", score: 19 },
+  { word: "No lemon no melon", score: 14 },
   { word: "12321", score: 5 },
 ];
 
@@ -56,5 +56,19 @@ describe("Utils - scorePalindrome", () => {
   it("should correctly score a non palindrome word", () => {
     const TEST_WORD = "test";
     expect(scorePalindrome(TEST_WORD)).toBe(NON_PALINDROME_SCORE);
+  });
+});
+
+describe("Utils - formatWord", () => {
+  it("should correctly format string by removing spaces", () => {
+    const TEST_WORD = "  hello world  ";
+    const EXPECTED_WORD = "helloworld";
+    expect(formatWord(TEST_WORD)).toEqual(EXPECTED_WORD);
+  });
+
+  it("should correctly format string by lower casing all letters", () => {
+    const TEST_WORD = "HeLLOworLd";
+    const EXPECTED_WORD = "helloworld";
+    expect(formatWord(TEST_WORD)).toEqual(EXPECTED_WORD);
   });
 });
