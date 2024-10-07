@@ -1,5 +1,6 @@
 import { Score } from "../../types/score";
 
+// Max Heap Implementation which stores user name and points, sorted by points.
 export default class ScoreHeap {
   private heap: Score[];
 
@@ -7,6 +8,7 @@ export default class ScoreHeap {
     this.heap = [];
   }
 
+  // untility function to get the parent of a given node index in the heap.
   private parent(index: number): number {
     return Math.floor((index - 1) / 2);
   }
@@ -30,6 +32,7 @@ export default class ScoreHeap {
     }
   }
 
+  // get the top n scores stored in the heap. The limit controls how many items should be read from the heap.
   getTopScore(limit: number): Score[] {
     const topItems = this.heap.slice(0, limit);
     return topItems.sort((a, b) => b.points - a.points);

@@ -17,7 +17,7 @@ const server = app.listen(PORT, () => {
 export const closeServer = () => {
   if (server) {
     return new Promise((resolve) => {
-      server.close(resolve); // Use the server instance to close
+      server.close(resolve);
     });
   }
 };
