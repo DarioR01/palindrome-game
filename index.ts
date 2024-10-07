@@ -1,22 +1,13 @@
 import express from "express";
+import rootRoutes from "./src/routes/root";
 
-var app = express();
+const PORT = 3000;
+const app = express();
 
 app.use(express.static(__dirname));
+app.use(express.json());
+app.use(rootRoutes);
 
-app.get("/", function (req, res) {
-  res.render("index.html");
-});
-
-app.get("/api/getScores", (req, res) => {
-  throw new Error("not implemented");
-});
-
-app.post("/api/submitEntry", (req, res) => {
-  throw new Error("not implemented");
-});
-
-var port = 3000;
-app.listen(port, function () {
-  console.log("Server", process.pid, "listening on port", port);
+app.listen(PORT, () => {
+  console.log("Server", process.pid, "listening on port", PORT);
 });
