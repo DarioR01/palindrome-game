@@ -48,8 +48,8 @@ describe("route - api/getScores", () => {
     expect(res.body).toEqual([
       { name: "Anna", points: 7 },
       { name: "Otto", points: 7 },
-      { name: "Hannah", points: 5 },
       { name: "Eve", points: 5 },
+      { name: "Hannah", points: 5 },
       { name: "Daniel", points: 3 },
     ]);
   });

@@ -2,7 +2,7 @@
 
 ## Explanation
 
-My solution is based on a Max Heap. The reason for this is that getting the top 5 elements from a list is computationally expensive but with a max heap this is instead performed in O(1). The only downside of this is that inserting to the list is performed in O(log(n)), but since both insertion and getting top items are used in the same page, the frequency of usage of both of these endponts will also be the same, making a max heap the most optimised way of storing our scores.
+My solution is based on a binary insertion. The reason for this is that getting the top 5 elements from a list is computationally expensive but with a binary insertion this is instead performed in O(1). The only downside of this is that inserting to the list is performed in O(n), but since both insertion and getting top items are used in the same page, the frequency of usage of both of these endponts will also be the same, making the binary insertion the most optimised way of storing our scores.
 
 I decided to only allow for alpha-numeric words and phrases to be a definition of palindrome. Therefore the API has a middleware that checks for usage of illegal characters and returns a bad request error if the user submit such characters. Furthermore scores are calculated by the length of the string excluding spaces.
 
